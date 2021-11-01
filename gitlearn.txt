@@ -1,0 +1,50 @@
+git安装
+从官网下载，直接安装，安装过程可以参考网上，不复杂。
+安装完毕，在开始菜单中，有git bash,类似于cmd。可以在这里进入某个文件夹，新建一个项目,并会在该项目文件夹下生成.git文件夹。.git文件夹下的各个文件夹各有各的作用。记录着项目所做的所有修改，和保存在各个版本。
+创建项目的命令？
+不，先要登录一下。因为上传到的地方时GitHub，所以在Gitbash 里先设置一下自己的账号。
+$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+
+global代表是全局变量
+
+接下来就可以创建项目，也叫做版本库respository
+$ mkdir learngit
+$ cd learngit
+这里直接在Git 的安装目录下创建了一个learngit的项目
+第二步，通过git init命令把这个目录变成Git可以管理的仓库：
+$ git init
+
+然后就可以在learngit文件夹中进行创作了
+把文件保存
+$ git add 文件名
+把文件提交
+$ git commit -m "wrote a readme file"
+
+其中 add可以是多个文件，commit只需要一次
+例如
+$ git add file1.txt
+$ git add file2.txt file3.txt
+$ git commit -m "add 3 files."
+
+查看历史版本
+$ git log
+可以看到commit id
+
+回到上一个版本
+$ git reset --hard HEAD^
+head是当前版本
+或者用commit id(例如上一个版本的commit id 是1094a开头的)
+$ git reset --hard 1094a
+
+如果忘记了id,
+$ git reflog
+
+查看当前状态
+$ git status
+
+放弃修改
+$ git checkout --文件名   （误删看文件管理器里的文件，也可以使用这个语句）
+放弃暂存区的修改
+$ git reset HEAD 文件名
+
